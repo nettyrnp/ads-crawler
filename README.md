@@ -87,7 +87,7 @@ curl -X POST   http://localhost:8080/api/v0/crawler/start_poll   -H 'cache-contr
 ```
 in HTTPS mode:
 ```
-curl -X POST   --cert './localhost+1.pem'   --cert-type PEM   --key './localhost+1-key.pem'   https://localhost:8080/api/v0/crawler/start_poll   -H 'cache-control: no-cache'
+curl -X POST   --cert './cert/localhost+1.pem'   --cert-type PEM   --key './cert/localhost+1-key.pem'   https://localhost:8080/api/v0/crawler/start_poll   -H 'cache-control: no-cache'
 ```
 The GET requests can be executed also in browser.
 

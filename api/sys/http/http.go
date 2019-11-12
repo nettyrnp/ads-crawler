@@ -209,29 +209,6 @@ func (c *Controller) GetPortalsExt(w http.ResponseWriter, r *http.Request) {
 	respondOK(w, svcResp, "")
 }
 
-//func (c *Controller) GetPortals(w http.ResponseWriter, r *http.Request) {
-//	svcResp := dto.NewServiceResponse()
-//
-//	opts:=repository.PortalsQueryOpts{
-//		Limit:  0,
-//		Offset: 0,
-//	}
-//	storedAds, lim, err := c.Service.GetPortals(r.Context(), opts)
-//	if err != nil {
-//		common.LogError(err.Error())
-//		c.respondNotOK(w, http.StatusBadRequest, svcResp, err.Error())
-//		return
-//	}
-//	if storedAds == nil {
-//		c.respondNotOK(w, http.StatusUnauthorized, svcResp, "Wrong email or password")
-//		return
-//	}
-//
-//	svcResp.Body = *storedAds
-//	common.LogInfof("Took ads for domain %v from storage", domain)
-//	respondOK(w, svcResp, "")
-//}
-
 func (c *Controller) GetProvidersByPortal(w http.ResponseWriter, r *http.Request) {
 	svcResp := dto.NewServiceResponse()
 	portalName := mux.Vars(r)["name"]
