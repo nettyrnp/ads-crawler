@@ -18,8 +18,10 @@ go get github.com/nettyrnp/ads-crawler
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
 
 [MacOS]
-brew postgresql-upgrade-database
+```
+brew install postgresql
 brew services start postgresql
+```
 
 Create database in postgres
 ```
@@ -68,7 +70,6 @@ Now visit http://localhost:8080/api/v0/crawler/admin/version and see the App ver
 
 
 ## REST API:
-========================
 Examples of Postman requests can be found in testdata/nettyrnp-crawler.postman_collection.json
 
 #### Main routes:

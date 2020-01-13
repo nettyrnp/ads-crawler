@@ -35,13 +35,7 @@ func NewController(conf config.Config, kind string) *http.Controller {
 	ns := notify.NewSmsNotifier(conf, kind)
 	emailNotifier := notify.NewEmailNotifier(conf, kind)
 
-	svc := &service.AdsService{
-		Name:          kind,
-		Repo:          repo,
-		SmsNotifier:   ns,
-		EmailNotifier: emailNotifier,
-		Conf:          conf,
-	}
+	svc := service.New(conf, kind, repo, ns, emailNotifier)
 
 	return http.New(svc, conf, kind)
 }

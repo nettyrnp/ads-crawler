@@ -41,6 +41,16 @@ type AdsService struct {
 	Conf          config.Config
 }
 
+func New(conf config.Config, name string, r repository.Repository, sms smsNotifier, email emailNotifier) *AdsService {
+	return &AdsService{
+		Name:          name,
+		Repo:          r,
+		SmsNotifier:   sms,
+		EmailNotifier: email,
+		Conf:          conf,
+	}
+}
+
 func (s *AdsService) GetPortals(ctx context.Context) ([]*entity.Portal, error) {
 	return s.Repo.GetPortals(ctx)
 }
